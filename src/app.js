@@ -15,7 +15,7 @@ app.set('views',viewsPath);
 hbs.registerPartials(partialsPath);
 
 //Setup static directory to serve
-// app.use(express.static(publicDirPath));
+app.use(express.static(publicDirPath));
 
 // app.get('/',(req,res)=>{
 //     res.send('hi');
@@ -49,7 +49,6 @@ app.get('/weather',(req,res)=>{
 
 
 app.get('*',(req,res)=>{
-    // res.send("My 404 Page");
     res.render('404');
 })
 app.listen(8000,()=>{
